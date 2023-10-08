@@ -1,0 +1,20 @@
+# @Author: Olukunle Amoo <kamoo>
+# @Date:   2023-09-05T12:29:08-05:00
+# @Email:  kamoo@unomaha.edu
+# @Filename: docker-compose.yml
+# @Last modified by:   kunle
+# @Last modified time: 2023-10-07T15:21:50-05:00
+# @Copyright: Copyright (C) 2023 Olukunle Amoo
+
+
+
+version: '3'
+services:
+  python-dog-api-assignment:
+    build: .
+    command: bash -c "python3 code/dogapi/manage.py runserver 0.0.0:8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./code:/code
+
